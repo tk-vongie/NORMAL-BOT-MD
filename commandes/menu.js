@@ -5,625 +5,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const util = require('util');
 const fs = require('fs-extra');
-const { zokou } = require(__dirname + "/../framework/zokou");
+const { zokou } = require(__dirname + "/../framework/france");
 const { format } = require(__dirname + "/../framework/mesfonctions");
 const os = require("os");
 const moment = require("moment-timezone");
 const s = require(__dirname + "/../set");
-const more = String.fromCharCode(8206)
-const readmore = more.repeat(4001)
 
 zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
-    let { cm } = require(__dirname + "/../framework//zokou");
+    let { cm } = require(__dirname + "/../framework//france");
     var coms = {};
     var mode = "public";
     
@@ -639,43 +31,46 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
         coms[com.categorie].push(com.nomCom);
     });
 
-    moment.tz.setDefault('EAT');
+    moment.tz.setDefault("Africa/Nairobi");
 
 // Créer une date et une heure en EAT
 const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-╭──────────────────❂
- ☯╭───*𝐏𝐎𝐏𝐊𝐈𝐃-𝐌𝐃*────❂
-┊〄┊ *𝐔𝐬𝐞𝐫* : ${s.OWNER_NAME}
-┊〄┊ *𝐌𝐨𝐝𝐞* : ${mode}
-┊〄╰───────────────❂
-┊〄┊ *𝐓𝐢𝐦𝐞* : ${temps}  
-┊〄┊ *𝐑𝐀𝐌* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-┊☯╰───────────────❂
-╰──────────────────❂ \n\n`;
+╭────《𝐏𝐎𝐏𝐊𝐈𝐃-𝐌𝐃》────☣
+|☢️ *User* : ${s.OWNER_NAME}
+|☢️ *Mode* : ${mode}
+|☢️ *Commands* : ${cm.length} 
+|☢️ *Time* : ${temps} 
+|☢️ *Ram* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+|👱 POPKID
+╰─────✨✨✨✨✨─────☣ \n\n`;
  
     let menuMsg=`  
-  *𝐏𝐎𝐏𝐊𝐈𝐃 𝐌𝐃 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒*
+   ▐░░░░░░░░░░░░░░░░░░░▌
+✨╭━━━━━∙⋆⋅⋆∙━━━━━━∙⋆⋅⋆∙━━━━━╮✨
 `;
 
     for (const cat in coms) {
-        menuMsg += `*╭────❂* *${cat}* *❂*`;
+        menuMsg += `*╭────□* *${cat}* *□⊷*`;
         for (const cmd of coms[cat]) {
             menuMsg += `  
-*┊☢️* ${cmd}`;
+*○* ${cmd}`;
         }
         menuMsg += `
-*╰═════════════❂* \n`
+*◇═════════════◇* \n`
     }
 
     menuMsg += `
-◇            ◇
-*—————♥️♥️♥️♥️—————*
+           
+*————— ✨ —————*
 
-  *𝐏𝐎𝐏𝐊𝐈𝐃 𝐌𝐃*                                         
-*╰═════════════❂*
+  
+
+
+  
+*◇═════════════◇*
 `;
 
    var lien = mybotpic();
@@ -692,7 +87,7 @@ const date = moment().format('DD/MM/YYYY');
 // Vérification pour .jpeg ou .png
 else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "*popkid*" }, { quoted: ms });
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "*Pop-Kid*" }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
