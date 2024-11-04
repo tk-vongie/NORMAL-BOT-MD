@@ -6,7 +6,7 @@ zokou(
   {
     nomCom: "vision",
     categorie: "General",
-    reaction: "🤩"
+    reaction: "🌚"
   },
   async (dest, zk, commandeOptions) => {
     const { ms, msgRepondu, repondre, text: instruction, mime } = commandeOptions;
@@ -27,7 +27,7 @@ zokou(
       let savedImagePath = await zk.downloadAndSaveMediaMessage(msgRepondu);
       let imgurLink = await zk.uploadtoimgur(savedImagePath);
 
-      repondre("A moment, Keith is analyzing contents of the image...");
+      repondre("A moment, Popkid is analyzing contents of the image...");
 
       // Initialize Google Generative AI client with the API key
       const generativeAIClient = new GoogleGenerativeAI("AIzaSyCcZqDMBa8FcAdBxqE1o6YYvzlygmpBx14");
