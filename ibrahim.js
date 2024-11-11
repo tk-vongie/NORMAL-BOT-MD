@@ -1,5 +1,3 @@
-
-
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -49,8 +47,10 @@ const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("./bdd
 const {isGroupOnlyAdmin,addGroupToOnlyAdminList,removeGroupFromOnlyAdminList} = require("./bdd/onlyAdmin");
 //const //{loadCmd}=require("/framework/mesfonctions")
 let { reagir } = require(__dirname + "/framework/app");
-var session = conf.session.replace(/POPKID;;;/g,"");
+var session = conf.session.replace(/Zokou-MD-WHATSAPP-BOT;;;=>/g,"");
 const prefixe = conf.PREFIXE;
+const more = String.fromCharCode(8206)
+const readmore = more.repeat(4001)
 
 
 async function authentification() {
@@ -67,7 +67,7 @@ async function authentification() {
         }
     }
     catch (e) {
-        console.log("Session Invalide " + e);
+        console.log("Session Invalid " + e);
         return;
     }
 }
@@ -82,7 +82,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Popkid md', "safari", "1.0.0"],
+            browser: ['Bmw-Md', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -134,11 +134,11 @@ setTimeout(() => {
             var origineMessage = ms.key.remoteJid;
             var idBot = decodeJid(zk.user.id);
             var servBot = idBot.split('@')[0];
-            /* const FranceKing='254740271632';
-             const Popkid='254111385747';
-             const Popkid2='254732297194'*/
-            /*  var superUser=[servBot,CarlTech,CarlTech1,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
-              var dev =[popkid,popkid1,popkid2].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
+            /* const dj='22559763447';
+             const dj2='254751284190';
+             const luffy='254762016957'*/
+            /*  var superUser=[servBot,dj,dj2,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
+              var dev =[dj,dj2,luffy].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
             const verifGroupe = origineMessage?.endsWith("@g.us");
             var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
             var nomGroupe = verifGroupe ? infosGroupe.subject : "";
@@ -146,7 +146,7 @@ setTimeout(() => {
             var auteurMsgRepondu = decodeJid(ms.message?.extendedTextMessage?.contextInfo?.participant);
             //ms.message.extendedTextMessage?.contextInfo?.mentionedJid
             // ms.message.extendedTextMessage?.contextInfo?.quotedMessage.
-            var mr = ms.message?.extendedTextMessage?.contextInfo?.mentionedJid;
+            var mr = ms.Message?.extendedTextMessage?.contextInfo?.mentionedJid;
             var utilisateur = mr ? mr : msgRepondu ? auteurMsgRepondu : "";
             var auteurMessage = verifGroupe ? (ms.key.participant ? ms.key.participant : ms.participant) : origineMessage;
             if (ms.key.fromMe) {
@@ -156,25 +156,25 @@ setTimeout(() => {
             var membreGroupe = verifGroupe ? ms.key.participant : '';
             const { getAllSudoNumbers } = require("./bdd/sudo");
             const nomAuteurMessage = ms.pushName;
-            const popkid = '254111385747';
-            const popkid1 = '254732297194';
-            const popkid2 = "254790342984";
-            const popkid3 = '254756466053';
+            const dj = '255678892560';
+            const dj2 = '255678892560';
+            const dj3 = "255678892560";
+            const luffy = '255678892560';
             const sudo = await getAllSudoNumbers();
-            const superUserNumbers = [servBot, popkid, popkid1, popkid2, popkid3, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+            const superUserNumbers = [servBot, dj, dj2, dj3, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
             const allAllowedNumbers = superUserNumbers.concat(sudo);
             const superUser = allAllowedNumbers.includes(auteurMessage);
             
-            var dev = [CarlTech, CarlTech1,CarlTech2,CarlTech3].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
+            var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-            console.log("\t [][]...{popkid md}...[][]");
-            console.log("=========== New message ===========");
+            console.log("\tANYWAY MD ONLINE");
+            console.log("=========== written message===========");
             if (verifGroupe) {
-                console.log("message from the group : " + nomGroupe);
+                console.log("message provenant du groupe : " + nomGroupe);
             }
-            console.log("message sent By : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
-            console.log("message type : " + mtype);
-            console.log("------ message content ------");
+            console.log("message envoyé par : " + "[" + nomAuteurMessage + " : " + auteurMessage.split("@s.whatsapp.net")[0] + " ]");
+            console.log("type de message : " + mtype);
+            console.log("------ contenu du message ------");
             console.log(texte);
             /**  */
             function groupeAdmin(membreGroupe) {
@@ -219,10 +219,10 @@ setTimeout(() => {
             
             // Utiliser une boucle for...of pour parcourir les liens
 function mybotpic() {
-    // G茅n茅rer un indice al茅atoire entre 0 (inclus) et la longueur du tableau (exclus)
-     // G茅n茅rer un indice al茅atoire entre 0 (inclus) et la longueur du tableau (exclus)
+    // Générer un indice aléatoire entre 0 (inclus) et la longueur du tableau (exclus)
+     // Générer un indice aléatoire entre 0 (inclus) et la longueur du tableau (exclus)
      const indiceAleatoire = Math.floor(Math.random() * lien.length);
-     // R茅cup茅rer le lien correspondant 脿 l'indice al茅atoire
+     // Récupérer le lien correspondant à l'indice aléatoire
      const lienAleatoire = lien[indiceAleatoire];
      return lienAleatoire;
   }
@@ -288,7 +288,7 @@ function mybotpic() {
         
                                     if(msg === null || !msg ||msg === 'undefined') {console.log('Message non trouver') ; return } 
         
-                                await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        馃槇Anti-delete-message馃槇\n Message from @${msg.key.participant.split('@')[0]}鈥媊 , mentions : [msg.key.participant]},)
+                                await zk.sendMessage(idBot,{ image : { url : './media/deleted-message.jpg'},caption : `        😈Anti-delete-message😈\n Message from @${msg.key.participant.split('@')[0]}​` , mentions : [msg.key.participant]},)
                                 .then( () => {
                                     zk.sendMessage(idBot,{forward : msg},{quoted : msg}) ;
                                 })
@@ -380,7 +380,7 @@ function mybotpic() {
                         let stickerMess = new Sticker(data.url, {
                             pack: conf.NOM_OWNER,
                             type: StickerTypes.FULL,
-                            categories: ["馃ぉ", "馃帀"],
+                            categories: ["🤩", "🎉"],
                             id: "12345",
                             quality: 70,
                             background: "transparent",
@@ -415,7 +415,7 @@ function mybotpic() {
         const yes = await verifierEtatJid(origineMessage)
         if (texte.includes('https://') && verifGroupe &&  yes  ) {
 
-         console.log("lien detect茅")
+         console.log("lien detecté")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
             
              if(superUser || verifAdmin || !verifZokAdmin  ) { console.log('je fais rien'); return};
@@ -426,20 +426,20 @@ function mybotpic() {
                                         id: ms.key.id,
                                         participant: auteurMessage
                                     };
-                                    var txt = "link detected, \n";
-                                   // txt += `message supprim茅 \n @${auteurMessage.split("@")[0]} r茅tir茅 du groupe.`;
+                                    var txt = "lien detected, \n";
+                                   // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
                                     const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {
-                                        pack: 'Cyberion-Spark-X',
+                                        pack: 'Zoou-Md',
                                         author: conf.OWNER_NAME,
                                         type: StickerTypes.FULL,
-                                        categories: ['馃ぉ', '馃帀'],
+                                        categories: ['🤩', '🎉'],
                                         id: '12345',
                                         quality: 50,
                                         background: '#000000'
                                     });
                                     await sticker.toFile("st1.webp");
-                                    // var txt = `@${auteurMsgRepondu.split("@")[0]} a 茅t茅 r茅tir茅 du groupe..\n`
+                                    // var txt = `@${auteurMsgRepondu.split("@")[0]} a été rétiré du groupe..\n`
                                     var action = await recupererActionJid(origineMessage);
 
                                       if (action === 'remove') {
@@ -459,7 +459,7 @@ function mybotpic() {
                                     await fs.unlink("st1.webp"); } 
                                         
                                        else if (action === 'delete') {
-                                        txt += `Goodbye \n @${auteurMessage.split("@")[0]} Any external link is totally rolled out here!.`;
+                                        txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { delete: key });
@@ -525,19 +525,19 @@ function mybotpic() {
                 participant: auteurMessage
             };
             var txt = "bot detected, \n";
-           // txt += `message supprim茅 \n @${auteurMessage.split("@")[0]} r茅tir茅 du groupe.`;
+           // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
             const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
             var sticker = new Sticker(gifLink, {
-                pack: 'Cyberion-Spark-X',
+                pack: 'Anyway-Md',
                 author: conf.OWNER_NAME,
                 type: StickerTypes.FULL,
-                categories: ['馃ぉ', '馃帀'],
+                categories: ['🤩', '🎉'],
                 id: '12345',
                 quality: 50,
                 background: '#000000'
             });
             await sticker.toFile("st1.webp");
-            // var txt = `@${auteurMsgRepondu.split("@")[0]} a 茅t茅 r茅tir茅 du groupe..\n`
+            // var txt = `@${auteurMsgRepondu.split("@")[0]} a été rétiré du groupe..\n`
             var action = await atbrecupererActionJid(origineMessage);
 
               if (action === 'remove') {
@@ -580,7 +580,7 @@ function mybotpic() {
 
     } else {
         var rest = warnlimit - warn ;
-      var  msg = `bot detected , your warn_count was upgraded ;\n rest : ${rest} `;
+      var  msg = `bot detected , your warn_count was upgrade ;\n rest : ${rest} `;
 
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
 
@@ -612,7 +612,7 @@ function mybotpic() {
                          /******************* PM_PERMT***************/
 
             if (!superUser && origineMessage === auteurMessage&& conf.PM_PERMIT === "yes" ) {
-                repondre("You don't have acces to Cyberion Spark X") ; return }
+                repondre("You don't have acces to commands here") ; return }
             ///////////////////////////////
 
              
@@ -637,7 +637,7 @@ function mybotpic() {
                 if(!superUser) {
                     let req = await isUserBanned(auteurMessage);
                     
-                        if (req) {repondre("Your access to Cyberion Spark X is denied"); return}
+                        if (req) {repondre("You are banned from bot commands"); return}
                     
 
                 } 
@@ -646,14 +646,14 @@ function mybotpic() {
                         cd.fonction(origineMessage, zk, commandeOptions);
                     }
                     catch (e) {
-                        console.log("馃槨馃槨 " + e);
-                        zk.sendMessage(origineMessage, { text: "馃槨馃槨 " + e }, { quoted: ms });
+                        console.log("😡😡 " + e);
+                        zk.sendMessage(origineMessage, { text: "😡😡 " + e }, { quoted: ms });
                     }
                 }
             }
-            //fin ex茅cution commandes
+            //fin exécution commandes
         });
-        //fin 茅v茅nement message
+        //fin événement message
 
 /******** evenement groupe update ****************/
 const { recupevents } = require('./bdd/welcome'); 
@@ -665,32 +665,24 @@ zk.ev.on('group-participants.update', async (group) => {
     try {
         ppgroup = await zk.profilePictureUrl(group.id, 'image');
     } catch {
-        ppgroup = 'https://telegra.ph/file/cc5fd0e19ae11164bd813.jpg';
+        ppgroup = '';
     }
 
     try {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg =`鈺斺晲鈺愨晲鈺愨棁鈼団棁鈺愨晲鈺愨晲鈺愨晽
-鈺� welcome to new(s) member(s)
-鈺� *New(s) Member(s) :*
-`;
-
+            let msg = `*ANYWAY MD WELCOME MESSAGE*`;
             let membres = group.participants;
             for (let membre of membres) {
-                msg += `鈺� @${membre.split("@")[0]}\n`;
+                msg += ` \n❒ *Hey* 🖐️ @${membre.split("@")[0]} WELCOME TO OUR GROUP. \n\n`;
             }
 
-            msg += `鈺�
-鈺氣晲鈺愨晲鈺愨棁鈼団棁鈺愨晲鈺愨晲鈺愨暆
-鈼� *Descriptioon*   鈼�
-
-${metadata.desc}\n\n Cyberion-Spark-X.`;
+            msg += `❒ *READ THE GROUP DESCRIPTION TO AVOID GETTING REMOVED* `;
 
             zk.sendMessage(group.id, { image: { url: ppgroup }, caption: msg, mentions: membres });
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
-            let msg = `Goodbye to that Fallen soldier, Powered by *饾棖饾棳饾棔饾棙饾棩饾棞饾棦饾棥*; \n`;
+            let msg = `one or somes member(s) left group;\n`;
 
             let membres = group.participants;
             for (let membre of membres) {
@@ -764,7 +756,7 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
                   zk.sendMessage(crons[i].group_id, { image : { url : './media/chrono.webp'} , caption: "Hello, it's time to close the group; sayonara." });
 
                 }, {
-                    timezone: "Africa/Nairobi"
+                    timezone: "Africa/Tanzania"
                   });
               }
         
@@ -781,20 +773,20 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
 
                  
                 },{
-                    timezone: "Africa/Nairobi"
+                    timezone: "Africa/Tanzania"
                   });
               }
         
             }
           } else {
-            console.log('Les crons n\'ont pas 茅t茅 activ茅s');
+            console.log('Les crons n\'ont pas été activés');
           }
 
           return
         }
 
         
-        //茅v茅nement contact
+        //événement contact
         zk.ev.on("contacts.upsert", async (contacts) => {
             const insertContact = (newContact) => {
                 for (const contact of newContact) {
@@ -809,33 +801,33 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
             };
             insertContact(contacts);
         });
-        //fin 茅v茅nement contact 
-        //茅v茅nement connexion
+        //fin événement contact 
+        //événement connexion
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("鈩癸笍 Connexion en cours...");
+                console.log("ℹ️ Anyway Md is connecting...");
             }
             else if (connection === 'open') {
-                console.log("鉁� connexion reussie! 鈽猴笍");
+                console.log("✅ Anyway Md Connected to WhatsApp! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
                 await (0, baileys_1.delay)(300);
                 console.log("------------------/-----");
-                console.log("le bot est en ligne 馃暩\n\n");
+                console.log("Anyway Md is Online 🕸\n\n");
                 //chargement des commandes 
-                console.log("chargement des commandes ...\n");
+                console.log("Loading Anyway Commands ...\n");
                 fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
                             require(__dirname + "/commandes/" + fichier);
-                            console.log(fichier + " install茅 鉁旓笍");
+                            console.log(fichier + " Installed Successfully✔️");
                         }
                         catch (e) {
-                            console.log(`${fichier} n'a pas pu 锚tre charg茅 pour les raisons suivantes : ${e}`);
-                        } /* require(__dirname + "/commandes/" + fichier);
-                         console.log(fichier + " install茅 鉁旓笍")*/
+                            console.log(`${fichier} could not be installed due to : ${e}`);
+                        } /* require(__dirname + "/beltah/" + fichier);
+                         console.log(fichier + " Installed ✔️")*/
                         (0, baileys_1.delay)(300);
                     }
                 });
@@ -850,54 +842,46 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
                 else {
                     md = "undefined";
                 }
-                console.log("chargement des commandes termin茅 鉁�");
+                console.log("Commands Installation Completed ✅");
 
                 await activateCrons();
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
-                let cmsg = `
- 鈹屸攢鈹€鈹€鈹€鈹€鈺愨攣鈹堚攬鈹�    鈺愨攢鈺愨攣鈹堚攬鈹佲晲鈹€鈹€鈹€鈹€鈹�
-   *鈽笍饾棖饾棳饾棔饾棙饾棩饾棞饾棦饾棥-饾棪饾棧饾棓饾棩饾棡-饾棲 饾棓饾棖饾棫饾棞饾棭饾棙馃寪*
- 鈹斺攢鈹€鈹€鈹€鈹€鈺愨攣鈹堚攬鈹�    鈺愨攢鈹€鈹€鈹€鈹€鈹€鈹€鈺愨攢鈹€鈹€鈹�
-    鈹忊柂锔庘柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻�
-    鈹�  馃暤Creator: *CARLTECH*
-    鈹�  鉂傗攢鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鉂�
-    鈹�  馃挮Prefix : 銆�${prefixe}銆�
-    鈹�  馃摫Mode : 銆�${md}銆�
-    鈹�  鈿欙笍Created on : *23.8.2024*
-    鈹�  馃搩Total Commands : ${evt.cm.length}
-    鉁扳仩鈦犫仩鈦犫柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鈻扁柊鉁�
- 鈹斺攢鈹€鈹€鈹€鈹€鈺愨攣鈹堚攬鈹佲晲鈹€鈯封攢鈯封晲鈹佲攬鈹堚攣鈺愨攢鈹€鈹€鈹€鈹€鈹�
-         *饾棖饾棳饾棔饾棙饾棩饾棞饾棦饾棥-饾棪饾棧饾棓饾棩饾棡-饾棲*`;
+
+                let cmsg =`      ❒─❒⁠⁠⁠⁠ *BOT-IS-RUNNING* ❒⁠⁠⁠⁠─⁠⁠⁠⁠❒⁠⁠⁠⁠
+╭❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠              
+❒⁠⁠⁠⁠ 𝑫𝑬𝑽   : *POPKID*   
+❒⁠⁠⁠⁠ 𝑩𝑶𝑻   : *POPKID-MD*
+╰❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠─❒⁠⁠⁠⁠`;
                 await zk.sendMessage(zk.user.id, { text: cmsg });
                 }
             }
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                 if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
-                    console.log('Session id 茅rron茅e veuillez rescanner le qr svp ...');
+                    console.log('Session id error, rescan again...');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionClosed) {
-                    console.log('!!! connexion ferm茅e, reconnexion en cours ...');
+                    console.log('!!! connexion fermée, reconnexion en cours ...');
                     main();
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.connectionLost) {
-                    console.log('connexion au serveur perdue 馃槥 ,,, reconnexion en cours ... ');
+                    console.log('connection error 😞 ,,, trying to reconnect... ');
                     main();
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason?.connectionReplaced) {
-                    console.log('connexion r茅plac茅e ,,, une sesssion est d茅j脿 ouverte veuillez la fermer svp !!!');
+                    console.log('connexion réplacée ,,, une sesssion est déjà ouverte veuillez la fermer svp !!!');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.loggedOut) {
-                    console.log('vous 锚tes d茅connect茅,,, veuillez rescanner le code qr svp');
+                    console.log('vous êtes déconnecté,,, veuillez rescanner le code qr svp');
                 }
                 else if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) {
-                    console.log('red茅marrage en cours 鈻讹笍');
+                    console.log('redémarrage en cours ▶️');
                     main();
                 }   else {
 
                     console.log('redemarrage sur le coup de l\'erreur  ',raisonDeconnexion) ;         
-                    //repondre("* Red茅marrage du bot en cour ...*");
+                    //repondre("* Redémarrage du bot en cour ...*");
 
                                 const {exec}=require("child_process") ;
 
@@ -908,10 +892,10 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
                 main(); //console.log(session)
             }
         });
-        //fin 茅v茅nement connexion
-        //茅v茅nement authentification 
+        //fin événement connexion
+        //événement authentification 
         zk.ev.on("creds.update", saveCreds);
-        //fin 茅v茅nement authentification 
+        //fin événement authentification 
         //
         /** ************* */
         //fonctions utiles
@@ -985,7 +969,7 @@ ${metadata.desc}\n\n Cyberion-Spark-X.`;
     let fichier = require.resolve(__filename);
     fs.watchFile(fichier, () => {
         fs.unwatchFile(fichier);
-        console.log(`mise 脿 jour ${__filename}`);
+        console.log(`mise à jour ${__filename}`);
         delete require.cache[fichier];
         require(fichier);
     });
